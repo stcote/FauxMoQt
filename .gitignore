@@ -1,0 +1,4 @@
+debug/
+*.stash
+Makefile*
+*.user
