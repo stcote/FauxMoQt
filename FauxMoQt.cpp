@@ -300,3 +300,24 @@ void FauxMoQt::addDevice( QString devName )
     connect( newDev, SIGNAL(msgOut(QString)), SIGNAL(msgOut(QString)) );
 }
 
+
+//*****************************************************************************
+//*****************************************************************************
+/**
+ * @brief setState
+ * @param devName
+ * @param state
+ * @return
+ */
+//*****************************************************************************
+bool FauxMoQt::setState( QString devName, bool state )
+{
+    if ( nameToDevice_.contains( devName ) )
+    {
+        nameToDevice_[devName]->setCurrentState( state );
+        return true;
+    }
+
+    return false;
+}
+
